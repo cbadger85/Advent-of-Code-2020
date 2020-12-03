@@ -13,13 +13,6 @@ class DayThree(private val originX: Int = 0,
     const val TREE = '#'
   }
 
-  init {
-    data.forEach { println(it) }
-    println()
-    println()
-    println()
-  }
-
   fun getNumberOfTrees(): Int {
     return getNumberOfTrees(originX, originY, 0)
   }
