@@ -27,7 +27,6 @@ class DayThree(
     val nextRowIdx =
       if (isNextRowIndexGreaterThanRowLastIndex) rowIdx + deltaX - data[colIdx].length else rowIdx + deltaX
 
-
     return countTrees(colIdx + deltaY, nextRowIdx, newTreeCount)
   }
 }
