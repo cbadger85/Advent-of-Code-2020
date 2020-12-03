@@ -1,6 +1,10 @@
 package daytwo
 
 class DayTwo {
+  private val data = DayTwoData.password
+    .split("\n")
+    .map(this::convertStringToPassword)
+
   private fun convertStringToPassword(passwordData: String): PasswordData {
     val values = passwordData.trim().split(" ")
 
@@ -27,17 +31,7 @@ class DayTwo {
         (passwordData.password[passwordData.minimumCount - 1] != passwordData.character &&
             passwordData.password[passwordData.maximumCount - 1] == passwordData.character)
 
-  private fun getData() = DayTwoData.password
-    .split("\n")
-    .map(this::convertStringToPassword)
+  fun getValidPasswordCountPart1() = data.filter(this::validatePasswordPart1).size
 
-  fun getValidPasswordCountPart1() =
-    getData()
-      .filter(this::validatePasswordPart1)
-      .size
-
-  fun getValidPasswordCountPart2() =
-    getData()
-      .filter(this::validatePasswordPart2)
-      .size
+  fun getValidPasswordCountPart2() = data.filter(this::validatePasswordPart2).size
 }
