@@ -27,11 +27,11 @@ class DayFive(private val totalRows: Int = 128, private val totalColumns: Int = 
 
   fun getHighestSeatId() = data.map(this::getSeatId).maxOrNull()
 
-  fun getMySeatId(): Int {
+  fun getMySeatId(): Int? {
     val seatIds = data.map(this::getSeatId).sorted()
     val allAvailableSeats = (seatIds.first()..seatIds.last()).filter { !seatIds.contains(it) }
 
-    return allAvailableSeats.find { !allAvailableSeats.contains(it - 1) && !allAvailableSeats.contains(it + 1) } ?: 0
+    return allAvailableSeats.find { !allAvailableSeats.contains(it - 1) && !allAvailableSeats.contains(it + 1) }
   }
 }
 
