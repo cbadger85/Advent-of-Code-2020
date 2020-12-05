@@ -16,7 +16,7 @@ class DayThree(
 
   fun getNumberOfTrees() = countTrees(originX, originY, 0)
 
-  private fun countTrees(colIdx: Int, rowIdx: Int, numberOfTrees: Int): Int {
+  private tailrec fun countTrees(colIdx: Int, rowIdx: Int, numberOfTrees: Int): Int {
     if (colIdx > data.lastIndex) return numberOfTrees
 
     val newTreeCount = if (data[colIdx][rowIdx] == TREE) numberOfTrees + 1 else numberOfTrees

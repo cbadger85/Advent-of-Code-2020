@@ -1,3 +1,4 @@
+import dayfour.DayFour
 import dayone.DayOne
 import daythree.DayThree
 import daytwo.DayTwo
@@ -22,4 +23,9 @@ fun main(args: Array<String>) {
     ).getNumberOfTrees().toBigInteger() * acc
   }
   println("Day Three Advent of Code 2020 Part 2 Solution - $partTwoSolution")
+
+  println()
+
+  println("Day Four Advent of Code 2020 Part 1 Solution - ${DayFour().getNumberOfPassportsWithRequiredFields()}")
+  println("Day Four Advent of Code 2020 Part 2 Solution - ${DayFour().getNumberOfValidPassports()}")
 }
