@@ -55,11 +55,11 @@ class DayFour {
       else -> false
     }
 
-  private fun validateHairColor(color: String) = color.matches(Regex("^#([a-fA-F0-9]{6})\$"))
+  private fun validateHairColor(color: String) = color.matches(Regex("#([a-fA-F0-9]{6})"))
 
   private fun validateEyeColor(color: String) = listOf("amb", "blu", "brn", "gry", "grn", "hzl", "oth").contains(color)
 
-  private fun validatePassportId(pid: String) = pid.matches(Regex("^([0-9]{9})\$"))
+  private fun validatePassportId(pid: String) = pid.matches(Regex("([0-9]{9})"))
 }
 
 fun <T> List<T>.toPair(): Pair<T, T> = this.takeIf { it.size == 2 }?.let { Pair(this.first(), this.last()) }
