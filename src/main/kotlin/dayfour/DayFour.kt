@@ -44,13 +44,13 @@ class DayFour {
           validatePassportId(it[PASSPORT_ID] ?: "")
     }.size
 
-  private fun validateYear(year: Int, min: Int, max: Int) = year in max downTo min
+  private fun validateYear(year: Int, min: Int, max: Int) = year in min..max
 
   private fun validateHeight(height: String) =
     when {
-      height.endsWith("cm") -> height.removeSuffix("cm").toIntOrNull()?.let { it in 193 downTo 150 }
+      height.endsWith("cm") -> height.removeSuffix("cm").toIntOrNull()?.let { it in 150..193 }
         ?: false
-      height.endsWith("in") -> height.removeSuffix("in").toIntOrNull()?.let { it in 76 downTo 59 }
+      height.endsWith("in") -> height.removeSuffix("in").toIntOrNull()?.let { it in 59..76 }
         ?: false
       else -> false
     }
