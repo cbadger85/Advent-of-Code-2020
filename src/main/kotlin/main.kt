@@ -1,6 +1,7 @@
 import dayfive.DayFive
 import dayfour.DayFour
 import dayone.DayOne
+import daysix.DaySix
 import daythree.DayThree
 import daytwo.DayTwo
 
@@ -34,4 +35,9 @@ fun main(args: Array<String>) {
 
   println("Day Five Advent of Code 2020 Part 1 Solution - ${DayFive().getHighestSeatId()}")
   println("Day Five Advent of Code 2020 Part 2 Solution - ${DayFive().getMySeatId()}")
+
+  println()
+
+  println("Day Six Advent of Code 2020 Part 1 Solution - ${DaySix().partOneSolution()}")
+  println("Day Five Advent of Code 2020 Part 2 Solution - ${DaySix().partTwoSolution()}")
 }
